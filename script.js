@@ -13,7 +13,32 @@ const LINKS = {
   vaqeelsaab: "https://vaqeelsaab.com"
 };
 
+/* ==========================================================
+   IMAGES — files that are already in assets/.
+   After copying an image in, add its file name here.
+   Until then the page shows a tidy placeholder tile instead.
+   Names used by the site: "photo.jpg", "code-gaon.jpg",
+   "bloom-back.png", "scoreup.png"
+   ========================================================== */
+const IMAGES = [];
+
 const GITHUB_USER = "sakshamsingla2022";
+
+/* ---------- Load listed images ---------- */
+// Only images named in IMAGES get a src, so a missing file never
+// causes a 404 error. CSS keeps each one invisible until it has
+// loaded (onload adds the class "ok").
+document.querySelectorAll("img[data-img]").forEach(function (img) {
+  if (IMAGES.indexOf(img.dataset.img) === -1) return;
+  const box = img.closest("[data-media]");
+  img.onerror = function () {
+    img.hidden = true;
+    if (box) box.hidden = true;
+  };
+  img.src = "assets/" + img.dataset.img;
+  img.hidden = false;
+  if (box) box.hidden = false;
+});
 
 /* ---------- Show or hide linked elements ---------- */
 // <a data-link="scoreup">  gets its href from LINKS, or is hidden if empty.
