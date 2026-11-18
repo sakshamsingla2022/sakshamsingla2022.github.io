@@ -54,7 +54,14 @@
       </header>
 
       <ul class="contact-list">
-        <li><span class="label">Email</span><a data-link="email" href="mailto:sakshamsingla8b@gmail.com">sakshamsingla8b@gmail.com</a></li>
+        <li>
+          <span class="label">Email</span>
+          <span class="email-group">
+            <a id="email-text" data-link="email" href="mailto:sakshamsingla8b@gmail.com">sakshamsingla8b@gmail.com</a>
+            <button class="btn btn-sm copy-btn" type="button" data-copy="email-text">Copy email</button>
+            <span class="sr-only" id="copy-status" aria-live="polite"></span>
+          </span>
+        </li>
         <li><span class="label">GitHub</span><a data-link="github" href="https://github.com/sakshamsingla2022">github.com/sakshamsingla2022</a></li>
         <li data-row="linkedin" hidden><span class="label">LinkedIn</span><a data-link="linkedin">LinkedIn profile</a></li>
         <li data-row="resume" hidden><span class="label">Résumé</span><a data-link="resume">Download PDF</a></li>

@@ -50,6 +50,47 @@ if (side && menuBtn) {
   });
 }
 
+/* ---------- Copy email button (Contact page) ---------- */
+// Many visitors use webmail, where a mailto: link does nothing,
+// so this copies the address. If copying is blocked, it selects
+// the address so they can press Ctrl+C / Cmd+C themselves.
+document.querySelectorAll("[data-copy]").forEach(function (btn) {
+  const target = document.getElementById(btn.dataset.copy);
+  const status = document.getElementById("copy-status");
+  const label = btn.textContent;
+  let timer;
+
+  function show(message) {
+    btn.textContent = message;
+    btn.classList.add("done");
+    if (status) status.textContent = message;
+    clearTimeout(timer);
+    timer = setTimeout(function () {
+      btn.textContent = label;
+      btn.classList.remove("done");
+      if (status) status.textContent = "";
+    }, 2000);
+  }
+
+  function selectText() {
+    const range = document.createRange();
+    range.selectNodeContents(target);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    show("Selected: press Ctrl+C");
+  }
+
+  btn.addEventListener("click", function () {
+    const text = target.textContent.trim();
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function () { show("Copied"); }, selectText);
+    } else {
+      selectText();
+    }
+  });
+});
+
 /* ---------- GitHub contributions graph (About page) ---------- */
 // Uses a free public API that reads GitHub's contribution calendar.
 // If it fails, is slow, or shows zero, the whole box stays hidden.
