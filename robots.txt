@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sakshamsingla2022.github.io/sitemap.xml

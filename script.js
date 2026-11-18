@@ -28,6 +28,9 @@ const GITHUB_USER = "sakshamsingla2022";
 // Only images named in IMAGES get a src, so a missing file never
 // causes a 404 error. CSS keeps each one invisible until it has
 // loaded (onload adds the class "ok").
+// Paths are worked out from where script.js lives, so they also
+// work on the 404 page, which can appear at any address.
+const SITE_ROOT = document.currentScript ? document.currentScript.src : location.href;
 document.querySelectorAll("img[data-img]").forEach(function (img) {
   if (IMAGES.indexOf(img.dataset.img) === -1) return;
   const box = img.closest("[data-media]");
@@ -35,7 +38,7 @@ document.querySelectorAll("img[data-img]").forEach(function (img) {
     img.hidden = true;
     if (box) box.hidden = true;
   };
-  img.src = "assets/" + img.dataset.img;
+  img.src = new URL("assets/" + img.dataset.img, SITE_ROOT).href;
   img.hidden = false;
   if (box) box.hidden = false;
 });
