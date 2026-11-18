@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About · Saksham Singla</title>
+  <meta name="description" content="About Saksham Singla: Code Gaon, teaching, and building apps.">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta property="og:title" content="About · Saksham Singla">
+  <meta property="og:description" content="About Saksham Singla: Code Gaon, teaching, and building apps.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script>document.documentElement.classList.add("js")</script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="side">
+    <div class="side-top">
+      <a class="me" href="index.html">
+        <span class="avatar">
+          <span class="initials" aria-hidden="true">SS</span>
+          <img src="assets/photo.jpg" alt="Photo of Saksham Singla" width="88" height="88" onload="this.classList.add('ok')">
+          <span class="dot" aria-hidden="true"></span>
+        </span>
+        <span>
+          <span class="me-name">Saksham Singla</span>
+          <span class="me-role">Student software developer</span>
+        </span>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>Menu
+      </button>
+    </div>
+    <nav id="nav" class="nav" aria-label="Main">
+      <a href="index.html"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span>Home</a>
+      <a href="about.html" class="on" aria-current="page"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-6 8-6s8 2 8 6"/></svg></span>About</a>
+      <a href="projects.html"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>Projects</a>
+      <a href="skills.html"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg></span>Skills</a>
+      <a href="recognition.html"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 7 5-3 5 3-1.5-7"/></svg></span>Recognition</a>
+      <a href="contact.html"><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="wrap">
+      <header class="page-head">
+        <h1>About</h1>
+        <p>A student from Haryana, India, who likes building things that people nearby actually use.</p>
+      </header>
+
+      <div class="about-grid">
+        <div class="prose">
+          <p>I am a Class 12 student who wants to study computer science. Most of what I build starts with a problem I can see close to home: a village school without coding classes, temple flowers going to waste, a family website that had been hacked.</p>
+          <p>Code Gaon began as an evening coding club at my village school in Kandrauli, Haryana. When the sarpanch gave us a computer room, it became a free programme for government-school children. I built its platform to work offline, because power cuts are normal there. It tracks attendance and progress, teaches in Hindi, and sends assignments over WhatsApp to students who do not have smartphones. Classmates I recruited teach as volunteers. One of the first students kept it running while I sat my board exams, and now studies computer science.</p>
+          <p>Before that, I taught free computer science classes to about 200 children over two summers in Holi village, Ambala.</p>
+          <p>I also build apps. Bloom Back is an Android app that links temples' leftover flowers and spare clothes with people who can use them. ScoreUp is an AI SAT prep web app. For my father's law firm, I cleaned up a hacked WordPress site and rebuilt it for clients in the US, Canada and UK.</p>
+          <p>Away from the keyboard, I captain my school's swimming team. I have been competing since Class 4.</p>
+        </div>
+
+        <aside class="facts" aria-label="Quick facts">
+          <dl>
+            <div><dt>Studying</dt><dd>Class 12, PCM</dd></div>
+            <div><dt>Class 12 score</dt><dd>92%</dd></div>
+            <div><dt>Wants to study</dt><dd>Computer science</dd></div>
+            <div><dt>Founded</dt><dd>Code Gaon</dd></div>
+            <div><dt>Courses</dt><dd>CS50x (Harvard), Kaggle Python</dd></div>
+            <div><dt>Sport</dt><dd>School swimming captain</dd></div>
+          </dl>
+        </aside>
+      </div>
+
+      <section id="gh" class="gh block" aria-labelledby="gh-title" hidden>
+        <h2 id="gh-title" class="section-title">GitHub activity</h2>
+        <p id="gh-total" class="gh-total"></p>
+        <div class="gh-scroll">
+          <div id="gh-grid" class="gh-grid" role="img" aria-label="GitHub contribution graph"></div>
+        </div>
+        <a class="more" data-link="github" href="https://github.com/sakshamsingla2022">View my GitHub profile →</a>
+      </section>
+
+      <footer class="foot">
+        <span>Saksham Singla</span>
+        <a data-link="email" href="mailto:sakshamsingla8b@gmail.com">Email</a>
+        <a data-link="github" href="https://github.com/sakshamsingla2022">GitHub</a>
+        <a data-link="linkedin" hidden>LinkedIn</a>
+      </footer>
+    </div>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
